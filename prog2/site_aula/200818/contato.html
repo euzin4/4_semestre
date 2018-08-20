@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Contato</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="estilos.css">
+	</head>
+	<body>
+		<header>
+			<h1>Título</h1>	
+			<p>texto...</p>	
+		</header>
+		<!--MENU-->
+		<nav>
+			<ul class="menu">
+				<li><a href="index.html">Página inicial</a></li>
+				<li><a href="curriculum.html">Curriculum</a></li>
+				<li><a href="portfolio.html">Portfólio</a></li>
+				<li><a href="temas.html">Temas de interesse</a></li>
+				<li><a href="localizacao.html">Localização</a></li>
+				<li><a href="contato.html">Contato</a></li>
+			</ul>
+		</nav>		
+		<main>
+		<h2>Entre am contato</h2>
+			<form action="" method="get"><!--metodo get é recomendado para uso em paginas de busca e o metodo post é recomendado na gravação ou edição de dados-->
+				<div>
+					<label>Nome:	<!--label sem usar id-->
+						<input type="text" name="nome" required>	<!-- o required torna o campo obrigatório-->
+					</label>
+				</div>
+
+				<div>
+					<label for="email">E-mail: </label>	<!--label usando id (usa o id da linha de baixo no 'for')-->
+					<input type="email" name="email" id="email" placeholder="exemplo@exemplo.com">
+				</div>
+
+				<div>
+					<label>Telefone: 
+						<input type="text" name="telefone" value="123"><!--o value pode ser usado para configurar um valor pré definido mas pode ser mudado-->
+					</label>
+				</div>
+
+				<fieldset>
+					<legend>Perfil:</legend>
+						<label><input type="radio" name="perfil" value="estudante">Estudante</label><br>	<!--aqui o value é o dado que será usado no php-->
+						<label><input type="radio" name="perfil" value="profissionalTI">Profissional de TI</label><br>
+						<label><input type="radio" name="perfil" value="outros" checked>Outros</label><br>
+				</fieldset>
+				<div>
+					<label>Assunto:
+						<select name="assunto">
+							<option value="0">Selecione</option>
+							<option value="1">Dúvidas</option>
+							<option value="2">Orçamento</option>
+							<option value="3">Críticas</option>
+							<option value="4">Sugestões</option>
+						</select>
+					</label>
+				</div>
+				<div>
+					<p>Horário(s) preferencial(is) para contato telefonico:</p>
+					<label><input type="checkbox" name="horario[]" value="manha" checked>Manhã</label>	<!--aqui o value é o dado que será usado no php-->
+					<label><input type="checkbox" name="horario[]" value="tarde">Tarde</label>
+					<label><input type="checkbox" name="horario[]" value="noite">Noite</label>
+				</div>
+				<div>
+					<label>Mensagem:<br>
+						<textarea name="msg" rows="10" cols="50" placeholder="escreva aqui"></textarea>	<!--no campo 'placeholder' vai a mensagem opaca que aparece se o campo estiver vazio-->
+					</label>
+				</div>
+				<div>
+					<input type="submit" value="Enviar">
+					<input type="reset" value="Limpar campos">
+				</div>
+			</main>
+			</form>
+		<footer>
+			<a href="#inicio">inicio da página</a>	<!--vai para a id 'inicio' que esta em '<h1>'(titulo)-->
+			<p style="color: grey">Área de rodapé</p><!--'style' diretamente no elemento (deve ser usado somente para fins de teste de formatação)-->
+		</footer>
+	</body>
+</html>
