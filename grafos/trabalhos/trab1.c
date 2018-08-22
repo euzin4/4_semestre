@@ -9,7 +9,7 @@ typedef struct _matrizes{
 void matriz1a(matriz *matr){
     int l=0, c=0, aux=99, val=99, cont=0, dist=0;
 
-    system("cls");
+    system("clear");
     printf("\n");
     while(cont < 5){
         for(c=0;c<5;c++){
@@ -35,8 +35,8 @@ void matriz1a(matriz *matr){
     printf("\ndistancia: %d\n\n", dist);
     menu(matr);
 }
-void matriz1i{
-
+void matriz1i(matriz *matr){
+    
 }
 void menu(matriz *matr){
     int opc;
@@ -53,13 +53,13 @@ void menu(matriz *matr){
             matriz1a(matr);
             break;
         case 2:
-            //matriz1i(matr);
+            matriz1i(matr);
             break;
         case 0:
             printf("\nAte logo!\n");
             break;
         default:
-        system("cls");
+        system("clear");
         printf("Valor invalido!\n\n");
         aux(matr);
     }
