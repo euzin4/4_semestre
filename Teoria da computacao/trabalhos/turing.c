@@ -14,9 +14,11 @@ int main()
     int car, cont, l, c;
 
     //inicia matriz
-    for(l=0; l<8; l++){
+    for(l=0; l<8; l++){ //zera a matriz
         for(c=0; c<4; c++){
-            matriz[l][c].novoc = ''
+            matriz[l][c].novoc = 'X';
+            matriz[l][c].estado = -9;
+            matriz[l][c].posicao = -9;
         }
     }
     matriz[0][0].novoc = '>'; matriz[0][0].estado = 0; matriz[0][0].posicao = 1;
@@ -41,12 +43,12 @@ int main()
 
     printf("valor:");
     fgets(val, 49, stdin);
-    car = strlen(val);    //quantidade de caracteres
+    car = strlen(val);    //quantidade de caracteres escritos
     cont = car;
     //adição do 'U'
     val[cont+1] = val[cont-1];
     val[cont-1] = 'U';
-    cont+1;
+    cont++;
     //adição do '>'
     while(1){
         val[cont] = val[cont-1];
@@ -57,6 +59,6 @@ int main()
         }
     }
     //----
-    printf("%d\n",car-1);
-    printf("%s",val);
+    printf("%s \n",val);
+    printf("%d caracteres\n",car-1);
 }
