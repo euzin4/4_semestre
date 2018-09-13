@@ -1,0 +1,42 @@
+Create table competicao(
+  sigla varchar(5) not null constraint pk_competicao PRIMARY KEY,
+  datai date not null,
+  dataf date not null,
+  titulo varchar(30) not null
+);
+Create table profissional(
+  matricula integer not null constraint pk_profissional PRIMARY KEY,
+  dataNasc date not null,
+  nome varchar(30) not null
+);
+Create table equipe(
+  codigo varchar(6) not null constraint pk_equipe PRIMARY KEY,
+  nome varchar(30) not null,
+  matricula integer not null,
+  constraint fk_equipe_profissional FOREIGN KEY (matricula) references profissional (matricula)
+);
+Create table jogo(
+  data date not null,
+  codigoLocal integer not null ,
+  codigoVisi integet not null
+  hora time not null,
+  pontosLocal integer ,
+  pontosVisi integer,
+  constraint pk_jogo PRIMARY KEY (data,codigoLocal,codigoVisi) ,
+  constraint fk_equipe_local FOREIGN KEY (codigoLocal) references equipe (codigo),
+  constraint fk_equipe_visi FOREIGN KEY (codigoVisi) references equipe(codigo)
+);
+Create table plantel(
+  matricula integer not null,
+  codigo integer not null,
+  dataAD date not null,
+  dataDES date,
+  constraint fk_plantel_mat FOREIGN KEY (matricula) references profissional (matricula),
+  constraint fk_plantel_cod FOREIGN KEY (codigo) references equipe (codigo)
+);
+Create table participa(
+  sigla varchar(5) not null,
+  codigo integer not null,
+  constraint fk_participa_sig FOREIGN KEY (sigla) references competicao (sigla),
+  constraint fk_participa_cod FOREIGN KEy (codigo) references equipe (codigo)
+);
