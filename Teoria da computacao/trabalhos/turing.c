@@ -12,6 +12,7 @@ int main()
     celula matriz[8][4];
     char val[50];
     int car, cont, l, c;
+    int linha = 0, coluna = 0, posicao = 0;
 
     //inicia matriz
     for(l=0; l<8; l++){ //zera a matriz
@@ -58,7 +59,31 @@ int main()
             break;
         }
     }
-    //----
+    /*
     printf("%s \n",val);
     printf("%d caracteres\n",car-1);
+    */
+    //-------------inicio da maqina
+    while(1){
+        if(val[posicao] == '>'){
+            coluna = 0;
+        }else if(val[posicao] == '0'){
+            coluna = 1;
+        }else if(val[posicao] == '1'){
+            coluna = 2;
+        }else if(val[posicao] == 'U'){
+            coluna = 3;
+        }
+        val[posicao] = matriz[linha][coluna].novoc;
+        posicao += matriz[linha][coluna].posicao;
+        linha = matriz[linha][coluna].estado;
+        if(linha == 6){
+            printf("Qsim\n");
+            break;
+        }
+        if(linha == 7){
+            printf("Qnao\n");
+            break;
+        }
+    }
 }
