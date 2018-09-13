@@ -59,12 +59,37 @@ int main()
             break;
         }
     }
-    /*
-    printf("%s \n",val);
-    printf("%d caracteres\n",car-1);
-    */
     //-------------inicio da maqina
     while(1){
+        //--------------nomes dos estados
+        if(linha == 0){
+            printf("(q0, %s)", val);
+        }
+        if(linha == 1){
+            printf("(Q li 1, %s)", val);
+        }
+        if(linha == 2){
+            printf("(Q li 0, %s)", val);
+        }
+        if(linha == 3){
+            printf("(Q teste 1, %s)",val);
+        }
+        if(linha == 4){
+            printf("(Q teste 0, %s)", val);
+        }
+        if(linha == 5){
+            printf("(Q volta, %s)",val);
+        }
+        if(linha == 6){
+            printf("(Q sim, %s)", val);
+            break;
+        }
+        if(linha == 7){
+            printf("(Q nao, %s)", val);
+            break;
+        }
+        printf("\n");
+        //--------------teste de casos
         if(val[posicao] == '>'){
             coluna = 0;
         }else if(val[posicao] == '0'){
@@ -77,13 +102,13 @@ int main()
         val[posicao] = matriz[linha][coluna].novoc;
         posicao += matriz[linha][coluna].posicao;
         linha = matriz[linha][coluna].estado;
-        if(linha == 6){
+        /*if(linha == 6){
             printf("Qsim\n");
             break;
         }
         if(linha == 7){
             printf("Qnao\n");
             break;
-        }
+        }*/
     }
 }
