@@ -1,0 +1,23 @@
+create table competicao(
+  sig varchar(10) not null constraint pk_competicao primary key,
+  dt_ini integer not null,
+  dt_fim integer not null,
+  titulo varchar(30)
+);
+create table equipe(
+  cod integer not null constraint pk_equipe primary key,
+  nome varchar(60) not null,
+  matt integer not null,
+  constraint fk_equipe_profissional foreign key(matt) references profissional(mat)
+);
+create table profissional(
+  mat integer not null constraint pk_profissional primary key,
+  nome varchar(60) not null,
+  dt_nasc integer not null
+);
+create table jogo(
+  hora time not null,
+  pt_local integer,
+  pt_visit integer,
+  
+);
