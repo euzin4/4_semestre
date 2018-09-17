@@ -1,7 +1,13 @@
-comandos:
+comandos:(outros comandos no caderno)
+
+sudo -u postgres psql /*comando para abrir o postgres com o usuario postgres*/
+
 insert into competicao (sigla, datai, dataf, titulo) values ('cmp1', '17/09/2018', '18/09/2018', 'classico'); /*insere dados na tabela "competicao", os dados estão com '' pois são do tipo varchar e date*/
+
 select * from competicao; /*mostra os dados na tabela "competicao"*/
 
+
+-----------------------------------------------------------------------------------------------------
 tabelas:
 Create table competicao(
   sigla varchar(5) not null constraint pk_competicao PRIMARY KEY,
