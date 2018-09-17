@@ -10,7 +10,7 @@ Create table profissional(
   nome varchar(30) not null
 );
 Create table equipe(
-  codigo varchar(6) not null constraint pk_equipe PRIMARY KEY,
+  codigo integer not null constraint pk_equipe PRIMARY KEY,
   nome varchar(30) not null,
   matricula integer not null,
   constraint fk_equipe_profissional FOREIGN KEY (matricula) references profissional (matricula)
@@ -18,7 +18,7 @@ Create table equipe(
 Create table jogo(
   data date not null,
   codigoLocal integer not null ,
-  codigoVisi integet not null
+  codigoVisi integer not null,
   hora time not null,
   pontosLocal integer ,
   pontosVisi integer,
