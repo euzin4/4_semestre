@@ -6,6 +6,19 @@ insert into competicao (sigla, datai, dataf, titulo) values ('cmp1', '17/09/2018
 
 select * from competicao; /*mostra os dados na tabela "competicao"*/
 
+delete from medico where cod=1234; /*deleta os dados com a condição do where na tabela medico*/
+
+-begin; /*o comandos após o begin só são efetivados após um dos comandos abaixo serem executados*/
+-rollback; /*funciona como um crtl+z quando executado cancela os comandos abaixo do begin*/
+-commit; /*executa os comandos abaixo do begin mas se existir algum erro no codigo ele volta os dados para o estado antes da execução*/
+
+update <nome_tabela> set <coluna>=<valor> [condição];
+exemplo: update conveniado set status='super' where codcv=26 or codcv=35;
+
+delete from <nome_tabela> [condição]
+exemplo: delete from medico where dtcad <= '31/12/2000' and dtcad >= '01/01/2000';
+
+
 
 -----------------------------------------------------------------------------------------------------
 tabelas:
