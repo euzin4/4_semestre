@@ -1,10 +1,12 @@
-comandos:(outros comandos no caderno)
+<b>comandos</b>:(outros comandos no caderno)
 
 sudo -u postgres psql /*comando para abrir o postgres com o usuario postgres*/
 
 insert into competicao (sigla, datai, dataf, titulo) values ('cmp1', '17/09/2018', '18/09/2018', 'classico'); /*insere dados na tabela "competicao", os dados estão com '' pois são do tipo varchar e date*/
 
 select * from competicao; /*mostra os dados na tabela "competicao"*/
+select <coluna(s)/atributos> from <origem/tabela> [condição]
+exemplo: select a,b,c from tabela where c='y'; /*mostra as linhas das colunas a,b,c onde existe o valor 'y' na coluna c*/
 
 delete from medico where cod=1234; /*deleta os dados com a condição do where na tabela medico*/
 
@@ -13,10 +15,10 @@ delete from medico where cod=1234; /*deleta os dados com a condição do where n
 -commit; /*executa os comandos abaixo do begin mas se existir algum erro no codigo ele volta os dados para o estado antes da execução*/
 
 update <nome_tabela> set <coluna>=<valor> [condição];
-exemplo: update conveniado set status='super' where codcv=26 or codcv=35;
+exemplo: update conveniado set status='super' where codcv=26 or codcv=35; /*atualiza os dados da coluna status na tabela conveniado onde o "codcv" é igual aos valores citados*/
 
 delete from <nome_tabela> [condição]
-exemplo: delete from medico where dtcad <= '31/12/2000' and dtcad >= '01/01/2000';
+exemplo: delete from medico where dtcad <= '31/12/2000' and dtcad >= '01/01/2000'; /*deleta da tabela "medico" os dados que estão entre os valore citados de "dtcad"*/
 
 
 
