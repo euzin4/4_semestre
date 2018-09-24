@@ -9,8 +9,8 @@ select * from competicao; /*mostra os dados na tabela "competicao"*/
 select <coluna(s)/atributos> from <origem/tabela> [condição]
 exemplo: select a,b,c from tabela where c='y'; /*mostra as linhas das colunas a,b,c onde existe o valor 'y' na coluna c*/
 
--begin; /*o comandos após o begin só são efetivados após um dos comandos abaixo serem executados*/
--rollback; /*funciona como um crtl+z quando executado cancela os comandos abaixo do begin*/
+-begin; //o comandos após o begin só são efetivados após um dos comandos abaixo serem executados
+-rollback; //funciona como um crtl+z quando executado cancela os comandos abaixo do begin
 -commit; /*executa os comandos abaixo do begin mas se existir algum erro no codigo ele volta os dados para o estado antes da execução*/
 
 update <nome_tabela> set <coluna>=<valor> [condição];
@@ -18,7 +18,16 @@ exemplo: update conveniado set status='super' where codcv=26 or codcv=35; /*atua
 
 delete from <origem/tabela> [condição];
 exemplo1: delete from medico where dtcad <= '31/12/2000' and dtcad >= '01/01/2000'; /*deleta da tabela "medico" os dados que estão entre os valore citados de "dtcad"*/
-exemplo2: delete from medico where cod=1234; /*deleta os dados que possuem o "cod" citado na tabela "medico"*/
+exemplo2: delete from medico where cod=1234; //deleta os dados que possuem o "cod" citado na tabela "medico"
+
+SELECT: o que eu quero ver,
+FROM: onde estão os dados,
+WHERE: critério da resposta;
+
+select * from tabela order by tabela.atributo; //exibir em ordem os dados de uma tabela usando 'order by'
+
+select nomec, nomeb from cidade join bairro on cidade.sigc = bairro.sigc;
+select nomec, nomeb from cidade natural join bairro;  /*os dois comandos mostram atributos(nomec, nomeb) comparando os valores(sigc) em tabelas diferentes*/
 
 
 
