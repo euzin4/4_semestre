@@ -1,6 +1,7 @@
 comandos:(outros comandos no caderno)
 
 sudo -u postgres psql /*comando para abrir o postgres com o usuario postgres*/
+psql -U nome_user -h localhost -d postgres  /*jeito mais funcional de acessar o postgres*/
 
 insert into competicao (sigla, datai, dataf, titulo) values ('cmp1', '17/09/2018', '18/09/2018', 'classico'); /*insere dados na tabela "competicao", os dados estão com '' pois são do tipo varchar e date*/
 
