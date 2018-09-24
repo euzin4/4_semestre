@@ -96,15 +96,19 @@ R: select sigc,nomec from cidade;
 R: select * from cidade where uf='SC';
 
 3. Listar todos os eventos cadastrados: apenas a descrição
-R: 
+R: select te.descr from evento e natural join tipoev te where e.code is not null;
 
 4. Listar todas as cidades com seus bairros cadastradas
-
+R:
 
 5. Listar todos os nomes de bairros das cidades de Itajaí e Chapecó.
-
+R:
 
 6. Listar todos os eventos do tipo Teatro que ocorreram a partir de Julho/2013: nome da cidade, bairro, no do local e nome do evento
-7. Listar todos os eventos que ocorreram/ocorrerão em Joinville.
-8. Vai ocorrer a 4a. Feiras de Noivos e Noivas no Centro de Eventos de Caibi (localizado no centro da cidade). O evento ocorrerá no dia 10/10/2018 iniciando às 08:00h
+R:select c.nomec, b.nomeb, l.nomel, e.nomee from evento e natural join tipoev te natural join local l natural join bairro b natural join cidade c where te.descr='Teatro' and e.dthora >= '01/07/2013';
 
+7. Listar todos os eventos que ocorreram/ocorrerão em Joinville.
+R:
+
+8. Vai ocorrer a 4a. Feiras de Noivos e Noivas no Centro de Eventos de Caibi (localizado no centro da cidade). O evento ocorrerá no dia 10/10/2018 iniciando às 08:00h
+R:
