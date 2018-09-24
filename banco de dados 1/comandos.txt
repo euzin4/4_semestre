@@ -28,3 +28,4 @@ select * from tabela order by tabela.atributo; //exibir em ordem os dados de uma
 
 select nomec, nomeb from cidade join bairro on cidade.sigc = bairro.sigc;
 select nomec, nomeb from cidade natural join bairro;  /*os dois comandos mostram atributos(nomec, nomeb) comparando os valores(sigc) em tabelas diferentes*/
+
