@@ -1,0 +1,5 @@
+1- listar a localização(bairro), nome do local e capacidade dos locais para eventos da cidade de itajaí cuja capacidade seja superior a 200 lugares 
+2- listar os eventos que ocorreram em chapecó em 2013 (bairro, nome do local, nome do evento, tipo do evento, data)
+3- listar as cidades que não possuam bairros cadastrados
+4- listar as cidades que não possuam local para eventos
+5- listar os locais de eventos que não tiveram ainda nenhum evento (cidade, bairro, nome do local)
