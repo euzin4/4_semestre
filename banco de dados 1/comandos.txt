@@ -3,6 +3,9 @@ comandos:(outros comandos no caderno)
 sudo -u postgres psql /*comando para abrir o postgres com o usuario postgres*/
 psql -U nome_user -h localhost -d postgres  /*jeito mais funcional de acessar o postgres*/
 
+/c <tabela> <usuario> /*para acessar uma tabela com um usuario em especifico (o usuario não é obrigatório)*/
+/d /*lista as tabelas no bd atual*/ ou \d <tabela> /*lista os atributos da tabela*/
+
 insert into competicao (sigla, datai, dataf, titulo) values ('cmp1', '17/09/2018', '18/09/2018', 'classico'); /*insere dados na tabela "competicao", os dados estão com '' pois são do tipo varchar e date*/
 
 select * from competicao; /*mostra os dados na tabela "competicao"*/
@@ -28,4 +31,20 @@ select * from tabela order by tabela.atributo; //exibir em ordem os dados de uma
 
 select nomec, nomeb from cidade join bairro on cidade.sigc = bairro.sigc;
 select nomec, nomeb from cidade natural join bairro;  /*os dois comandos mostram atributos(nomec, nomeb) comparando os valores(sigc) em tabelas diferentes*/
+
+natural left join /*left usa os atributos com relação entre duas tabelas e também os que não possuem na tabela da esquerda*/
+natural right join  /*é a mesma coisa do left só que para a direita*/
+
+/-------------------------------------------------------------------------------------------------
+
+select count(sigc) from evento; /*conta quantas linhas sigc possuem valor na tabela evento*/
+select count(<atributo>) from <tabela>; 
+/*para contar quantos elementos existem em uma tabela recomenda-se usar um atributo não nulo*/
+
+select max(capac) from local;  /*mostra o maior valor de 'capac' na tabela 'local'*/
+select max(<atributo>) from <tabela>;
+
+select avg(<atributo>) from <tabela>; /*avg faz a média dos valores do 'atributo' na 'tabela'*/
+
+select sum(<atributo>) from <tabela>; /*sum faz a soma dos 'atributos' na 'tabela'*/
 
