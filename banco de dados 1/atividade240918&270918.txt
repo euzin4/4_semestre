@@ -102,13 +102,14 @@ R: select te.descr from evento e natural join tipoev te where e.code is not null
 R:select c.nomec, b.nomeb from cidade c natural join bairro b order by nomec;
 
 5. Listar todos os nomes de bairros das cidades de Itajaí e Chapecó.
-R:
+R:select b.nomeb from bairro b natural join cidade c where c.nomec='Itajaí' or c.nomec='Chapecó';
 
 6. Listar todos os eventos do tipo Teatro que ocorreram a partir de Julho/2013: nome da cidade, bairro, no do local e nome do evento
 R:select c.nomec, b.nomeb, l.nomel, e.nomee from evento e natural join tipoev te natural join local l natural join bairro b natural join cidade c where te.descr='Teatro' and e.dthora >= '01/07/2013';
 
 7. Listar todos os eventos que ocorreram/ocorrerão em Joinville.
-R:
+R:select e.nomee from evento e natural join cidade c where c.nomec='Joiville'; 
+obs:nome da cidade escrito errado
 
 8. Vai ocorrer a 4a. Feiras de Noivos e Noivas no Centro de Eventos de Caibi (localizado no centro da cidade). O evento ocorrerá no dia 10/10/2018 iniciando às 08:00h
 R:
@@ -120,10 +121,13 @@ atividade 270918
 R: select b.nomeb, l.nomel, l.capac from cidade c join bairro b on c.sigc=b.sigc join local l on b.sigc =l.sigc and b.sigb=l.sigb where c.nomec='itajaí' and l.capac > 200;
 
 2- listar os eventos que ocorreram em chapecó em 2013 (bairro, nome do local, nome do evento, tipo do evento, data)
-R:
+R:select b.nomeb, l.nomel, e.nomee, e.dthora, te.descr from cidade c natural join 
 
 3- listar as cidades que não possuam bairros cadastrados
-R:
+R:3  formas de resposta
+->select c.nomec from cidade c where c.sigc not in (select sigc from bairro);
+->select c.nomec from cidade c natural left join bairro b where b.sigc is null;
+->select c.nomec from cidade c where not exists(select * from bairro b where b.sigc=c.sigc);
 
 4- listar as cidades que não possuam local para eventos
 R:
