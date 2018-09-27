@@ -112,3 +112,21 @@ R:
 
 8. Vai ocorrer a 4a. Feiras de Noivos e Noivas no Centro de Eventos de Caibi (localizado no centro da cidade). O evento ocorrerá no dia 10/10/2018 iniciando às 08:00h
 R:
+
+/------------------------------------------------------------------------------------------------------------
+atividade 270918
+
+1- listar a localização(bairro), nome do local e capacidade dos locais para eventos da cidade de itajaí cuja capacidade seja superior a 200 lugares 
+R:
+
+2- listar os eventos que ocorreram em chapecó em 2013 (bairro, nome do local, nome do evento, tipo do evento, data)
+R:
+
+3- listar as cidades que não possuam bairros cadastrados
+R:
+
+4- listar as cidades que não possuam local para eventos
+R:
+
+5- listar os locais de eventos que não tiveram ainda nenhum evento (cidade, bairro, nome do local)
+R:
