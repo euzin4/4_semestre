@@ -130,7 +130,7 @@ R:3  formas de resposta
 ->select c.nomec from cidade c where not exists(select * from bairro b where b.sigc=c.sigc);
 
 4- listar as cidades que não possuam local para eventos
-R:
+R:select c.nomec, b.nomeb from cidade c natural join bairro b where sigb not in (select sigb from local);
 
 5- listar os locais de eventos que não tiveram ainda nenhum evento (cidade, bairro, nome do local)
 R:
