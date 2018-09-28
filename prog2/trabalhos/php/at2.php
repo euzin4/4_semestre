@@ -2,6 +2,18 @@
 <html>
 <head>
 	<title></title>
+	<style type="text/css">
+		table, tr, td, th{
+			border: 1px solid black;
+			text-align: center;
+		}
+		th{
+			background-color: grey;
+		}
+		td{
+			padding: 0 15px;
+		}
+	</style>
 </head>
 <body>
 	<?php
@@ -17,13 +29,20 @@
 			array("nome" => "juliana", "np1" => 6,"np2" => 8),
 			array("nome" => "sara", "np1" => 5,"np2" => 4)
 		);
+		echo "<table>";
+		echo "	<tr>
+					<th>Nome</th>
+					<th>NP1</th>
+					<th>NP2</th>
+				</tr>";
 		foreach ($alunos as $item) {
-			echo "<div>
-					<p><strong>$item[0]</strong></p>
-					<p>$item[1]</p>
-					<p>$item[2]</p>";
-			echo "</p></div>";
+			echo "<tr>
+					<td>$item[nome]</td>
+					<td>$item[np1]</td>
+					<td>$item[np2]</td>
+				  </tr>";
 		}
+		echo  "</table>";
 	?>
 </body>
 </html>
