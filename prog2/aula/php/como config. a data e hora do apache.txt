@@ -1,3 +1,7 @@
 No linux:
 no arquivo /opt/lampp/etc/php.ini
 modificar a linha "date.timezone=algo" para "date.timezone=America/Sao_Paulo"(sem aspas)
+
+No windows:
+no arquivo c:xampp/php/php.ini
+modificar a linha "date.timezone=algo" para "date.timezone=America/Sao_Paulo"(sem aspas)
