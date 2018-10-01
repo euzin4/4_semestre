@@ -169,15 +169,11 @@ void menu(exeA *exa){
 
     printf("MENU\n");
     printf("1-BFS\n");
-    printf("2-Dijkstra\n");
     printf("0-sair\n");
     scanf("%d",&opc);
     switch(opc){
         case 1:
             bfs_f(exa);
-            break;
-        case 2:
-            //dijkstra_f(exa);
             break;
         case 0:
             printf("\nAte logo!\n");
