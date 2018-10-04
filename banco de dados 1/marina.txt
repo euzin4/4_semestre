@@ -27,17 +27,36 @@ R:select s.name from sailor s where current_date-s.dbirth>365*40;
 11. Retornar a maior potência dos barcos por tipo.
 12. Retornar a quantidade de velejadores por classe. Deve aparecer a descrição da classe e não
 o código.
+R:select t.dsc, count(*) from sailor s join tplevel t on t.lid=s.level group by 1;
+
 13. Retornar os dados de todos os barcos e de suas respectivas reservas, caso existirem.
+R:select * from boat as b left join reserve as r on b.bid=r.bid join tstatus as ts on b.tsboat=ts.tsid join tpboat as tp on b.tbid=tp.tbid;
+
 14. Retornar os nomes dos velejadores e dos barcos que ainda não foram devolvidos.
+R:select s.name, b.name from sailor s join reserve r on s.sid=r.sid join boat b on r.bid=b.bid where r.nhours is null;
+
 15. Retornar o nome do velejador e do barco que tiveram o maior tempo de reserva (podem
 existir mais de um).
+R:select s.name, b.name, r.nhours from reserve r join sailor s on r.sid=s.sid join boat b on //terminar
+
+15.5) retornar o nome dos velejadores que reservaram pelo menos barcos do tipo 1 e 2.
+R:
+r1)select s.name from sailor s where s.sid in (select s.sid from sailor s join reserve r on r.sid=s.sid join boat b on b.bid=r.bid where b.tbid=1) and s.sid in (select s.sid from sailor s join reserve r on r.sid=s.sid join boat b on b.bid=r.bid where b.tbid=2);
+r2)select a.name from (select s.name, b.tbid from sailor s join reserve r on r.sid=s.sid join boat b on r.bid=b.bid where b.tbid = 1) as a join (select s.name, b.tbid from sailor s join reserve r on r.sid=s.sid join boat b on r.bid=b.bid where b.tbid = 2) as b on a.name=b.name;
+r3)(usando intersecção) select s.sid, s.name from sailor s join reserve r on s.sid=r.sid join boat b on r.bid=b.bid where b.tbid=1 intersect select s.sid, s.name from sailor s join reserve r on s.sid=r.sid join boat b on r.bid=b.bid where b.tbid=2;
+
 16. Retornar os dados dos barcos que nunca foram reservados.
+R:
 
 17. Retornar o nome de todos os velejadores com as suas reservas caso existam.
-R:select s.name, r.bid, r.dtres from sailor s natural join reserve r where r.sid in (select sid from sailor) order by name;
+R:select s.name, b.name, r.dtres from sailor s left join reserve r on s.sid=r.sid join boat b on r.bid=b.bid order by 1;
 
 18. Retornar o nome e classe (descrição) dos velejadores que fizeram menos de 10 reservas.
+R:select s.name, tpl.dsc from reserve r natural join sailor s join tplevel tpl on tpl.lid=s.sid group by 1,2 having count (*) < 10;
+
 19. Retornar os nomes dos barcos com seus respectivos totais de tempo de reserva.
+R:
+
 20. Retornar os nomes dos velejadores e barcos reservados por velejadors amadores no ano de
 2007.
 21. Retornar nome do velejador, descrição da classe do velejador, nome e tipo do barco das
