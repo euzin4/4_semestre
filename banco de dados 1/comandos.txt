@@ -29,6 +29,9 @@ WHERE: critério da resposta;
 
 select * from tabela order by tabela.atributo; //exibir em ordem os dados de uma tabela usando 'order by'
 
+/------------------------------------------------------------------------------------------------
+
+/*usando o join*/
 select nomec, nomeb from cidade join bairro on cidade.sigc = bairro.sigc;
 select nomec, nomeb from cidade natural join bairro;  /*os dois comandos mostram atributos(nomec, nomeb) comparando os valores(sigc) em tabelas diferentes*/
 
@@ -48,3 +51,21 @@ select avg(<atributo>) from <tabela>; /*avg faz a média dos valores do 'atribut
 
 select sum(<atributo>) from <tabela>; /*sum faz a soma dos 'atributos' na 'tabela'*/
 
+/-------------------------------------------------------------------------------------------------
+
+/*usando intersecção (intersection)*/
+select s.sid, s.name from sailor s join reserve r on s.sid=r.sid join boat b on r.bid=b.bid where b.tbid=1 intersect select s.sid, s.name from sailor s join reserve r on s.sid=r.sid join boat b on r.bid=b.bid where b.tbid=2; /*retorna o nome dos velejadores que reservaram o barco tipo 1 E tipo 2, para funcionar o 'intersection' os valores retornados (aqui o s.sid e o s.sname) tem que ser os mesmos nos dois 'selects' para a função funcionar*/
+
+/*usando o union*/
+select s.sid, s.name from sailor s join reserve r on s.sid=r.sid join boat b on r.bid=b.bid where b.tbid=1 union select s.sid, s.name from sailor s join reserve r on s.sid=r.sid join boat b on r.bid=b.bid where b.tbid=2;/*retorna todos os velejadores que reservaram os barcos tipo 1 OU tipo 2 sem repetir os nomes de quem reservou os dois tipos*/
+
+/*usando except*/
+
+
+/------------------------------------------------------------------------------------------------------------------
+
+/*usando having*/
+select s.name, tpl.dsc from reserve r natural join sailor s join tplevel tpl on tpl.lid=s.sid group by 1,2 having count (*) < 10;
+/*o having só é usado quando count, sum, max,avg precisam ser usados diretamente no condicional, pois são condicionais de grupo e se forem, usados com o where ocorre erro de sintaxe*/
+/*caso em que o where funciona com esses comandos*/
+...where horses = (select max(horses));
