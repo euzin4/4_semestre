@@ -51,6 +51,8 @@ select avg(<atributo>) from <tabela>; /*avg faz a média dos valores do 'atribut
 
 select sum(<atributo>) from <tabela>; /*sum faz a soma dos 'atributos' na 'tabela'*/
 
+select min(<atributo>) from <tabela>; /*mostra o menor valor*/
+
 /-------------------------------------------------------------------------------------------------
 
 /*usando intersecção (intersection)*/
