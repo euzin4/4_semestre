@@ -1,0 +1,8 @@
+ GRAFOS:
+ ALGORITMO DOS MÍNIMOS SUCESSIVOS (pag. 11)
+ http://www.pucrs.br/ciencias/viali/graduacao/po_2/literatura/grafos/artigos/Famat_artigo_04.pdf
+ 
+ 
+ 
+ redução:
+ https://pt.wikipedia.org/wiki/Redu%C3%A7%C3%A3o_(complexidade)
