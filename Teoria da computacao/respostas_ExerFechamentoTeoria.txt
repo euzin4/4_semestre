@@ -1,0 +1,13 @@
+1-R:a)é um problema que tem duas soluções possíveis, ou sim ou não.
+b) sendo L uma línguagem, para todo x ∈ L, M(x) = sim, e, para todo x ∉ L, M(x) = não.
+c)um problema é decidível quando é dada uma entrada pertencente a linguagem e sempre resulta em uma resposta final sim ou não.
+um problema é indecidível quando é dada uma entrada pentencente a linguagem e pode resultar em uma resposta final sim ou não para.
+
+2-R:A se reduz a B quando existe um algoritmo que converte instâncias de A em instâncias de B que têm a mesma resposta. A é o que se conhece, B é a incógnita (nunca o oposto).
+
+3-R:a)F, pois B é o que está sendo testado e A é o problema conhecido
+b)V
+c)V
+d)F, se B é indecidível não quer dizer A também é indecidível
+
+4-R:a)
