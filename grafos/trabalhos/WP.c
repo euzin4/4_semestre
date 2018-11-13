@@ -22,6 +22,7 @@ int main(){            //ah ab bd cd di dk ek ef fg gh gk hi hj hk ij jk
     int grau[2][11];
     int l, c, c1, contg, vert, mag;
 
+    //------------------------------------------------------------------------------
     for(l=0; l< 11; l++){   //contagem do grau dos vértices
         contg = 0;
         for(c=0; c<16; c++){
@@ -45,5 +46,7 @@ int main(){            //ah ab bd cd di dk ek ef fg gh gk hi hj hk ij jk
         wel[0][c1] = vert;  //tabela wel recebe o vertice encontrado
         wel[1][c1] = mag;   //tabela wel recebe o grau encontrado
     }
-    
+    //------------------------------------------------------------------------------
+
+
 }
