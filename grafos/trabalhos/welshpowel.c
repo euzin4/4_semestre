@@ -20,9 +20,10 @@ int main(){            //ah ab bd cd di dk ek ef fg gh gk hi hj hk ij jk
                         { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};  //cor
 
     int grau[2][11];
-    int l, c, c1, contg, vert, mag;
+    int l, l1, c, c0, c1, c2, contg, vert, mag, list;
+    int cor = 1, ts = 0;
 
-    //------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------organização por grau de vertice
     for(l=0; l< 11; l++){   //contagem do grau dos vértices
         contg = 0;
         for(c=0; c<16; c++){
@@ -47,6 +48,36 @@ int main(){            //ah ab bd cd di dk ek ef fg gh gk hi hj hk ij jk
         wel[1][c1] = mag;   //tabela wel recebe o grau encontrado
     }
     //------------------------------------------------------------------------------
-
-
+    for(c0=0; c0<11; c0++){//===
+    for(c=0; c<11; c++){    //passa pelas colunas da matriz 'wel'
+        if(wel[2][c] == 0){ //se encontrar vertice sem cor
+            l = wel[0][c];  //pega o numero do vertice
+            for(c1=0; c1<16; c1++){ //percorre as colunas do vertice sem cor
+                if(incid[l][c1] == 1){  //encontra as arestas do vertice
+                    for(l1=0; l1<11; l1++){ //procura a outra extremidade da aresta
+                        if(l != l1 && incid[l1][c1] == 1){ //encontra a outra extremidade da aresta
+                            for(c2=0; c2<11; c2++){  //percorre 'wel'
+                                if(wel[0][c2] == l1){   //encontra o outro vertice
+                                    if(cor == wel[2][c2]){ //se tem a mesma cor que a cor atual
+                                        ts = 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if(ts == 0){    //se não encontrar problemas
+                wel[2][c] = cor;
+            }else{
+                ts = 0;
+            }
+        }
+    }
+    cor++;
+    }//====
+    printf("GRAU | VERTICE | COR\n");
+    for(list=0; list<11; list++){
+        printf("  %d       %d       %d\n", wel[1][list], wel[0][list], wel[2][list]);
+    }
 }
