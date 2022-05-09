@@ -6,6 +6,7 @@ psql -U nome_user -h localhost -d postgres  /*jeito mais funcional de acessar o 
 \l lista os DATABESE que o postgres esta guardando
 \d /*lista as TABELAS no bd atual*/ ou \d <tabela> /*lista os atributos da tabela*/
 \c <tabela> <usuario> /*para acessar uma tabela com um usuario em especifico (o usuario não é obrigatório)*/
+\i /'caminho do arquivo' ex:\i /user/arquivo.sql  /*dentro do postgres esse comando executa comandos que estao em um 'arquivo.sql'*/
 
 create user teste  with encrypted password 'teste';  /*cria um usuario 'teste' com a senha 'teste'*/
 grant all privileges on database imdb to teste; /*garante ao usuario 'teste' previlegio total ao banco 'imdb'*/
